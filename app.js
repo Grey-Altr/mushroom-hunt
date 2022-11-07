@@ -68,10 +68,20 @@ function displayFriends() {
             //     add an event listener to each friend
             const friendInState = findFriendByName(friend.name, friendData);
             //         and if the friend's satisfaction level is below 3 and you have mushrooms left
-            //             increment the friends satisfaction and decrement your mushrooms
-            //             then display your friends and mushrooms with the updated state
+            if (mushroomCount === 0) {
+                alert('All out of shrooms! Forage for more!');
+            }
+            if (mushroomCount > 0 && friendInState.satisfaction < 3) {
+                //             increment the friends satisfaction and decrement your mushrooms
+                friendInState.satisfaction++;
+                mushroomCount--;
+                //             then display your friends and mushrooms with the updated state
+                displayFriends();
+                displayMushrooms();
+            }
         });
         // append the friendEl to the friends list in DOM
+        friendsEl.append(friendEl);
     }
 }
 
