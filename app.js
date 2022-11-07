@@ -88,3 +88,11 @@ function displayMushrooms() {
 
 displayFriends();
 displayMushrooms();
+
+function findFriendByName(name, friends) {
+    for (let friend of friends) {
+        if (friend.name === name) {
+            return friend;
+        }
+    }
+}
