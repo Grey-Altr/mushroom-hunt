@@ -69,7 +69,7 @@ function displayFriends() {
             const friendInState = findFriendByName(friend.name, friendData);
             //         and if the friend's satisfaction level is below 3 and you have mushrooms left
             if (mushroomCount === 0) {
-                alert('All out of shrooms! Forage for more!');
+                alert('All out of mushrooms! Forage for more!');
             }
             if (mushroomCount > 0 && friendInState.satisfaction < 3) {
                 //             increment the friends satisfaction and decrement your mushrooms
